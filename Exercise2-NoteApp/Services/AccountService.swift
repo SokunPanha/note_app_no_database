@@ -43,8 +43,8 @@ internal class KeyChainHelper {
     }
 }
 
-class AccountManager{
-    static var shared = AccountManager()
+class AccountService{
+    static var shared = AccountService()
     private init(){}
     
     static func validateCredentail(username: String, password: String) -> Bool{
@@ -59,11 +59,13 @@ class AccountManager{
     static func setAccountInfo(username: String){
         UserDefaults.standard.setValue(username, forKey: "username")
     }
-    static func getAccountInfo()-> String {
-        guard let username = UserDefaults.standard.string(forKey: "username") else {return ""}
+    static func removeAccountInfo(){
+        UserDefaults.standard.removeObject(forKey: "username")
+    }
+    static func getAccountInfo()-> String? {
+        guard let username = UserDefaults.standard.string(forKey: "username") else {return nil}
         return username
     }
-    
     
 }
 

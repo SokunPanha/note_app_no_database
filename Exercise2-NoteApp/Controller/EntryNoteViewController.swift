@@ -28,7 +28,7 @@ class EntryNoteViewController: UIViewController {
     private let titleTextField = UITextField()
     private let detailTextField = UITextView()
     private let saveButton = UIButton()
-    private let noteManager = NoteManager.shared
+    private let noteManager = NoteService.shared
     
     var delegate: EntryNoteDelegate?
     var entryType: EntryType?
@@ -38,20 +38,18 @@ class EntryNoteViewController: UIViewController {
     private var bottomScrollViewConstraint: NSLayoutConstraint?
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        
-        
         if entryType == .update {
             titleTextField.text = note?.title
             detailTextField.text = note?.detail
         }
-        
+        view.backgroundColor = .white
         UIAdder()
         scrollViewUI()
         mainViewUI()
         stackViewUI()
         textFieldUI()
         saveButtonUI()
+      
         // Do any additional setup after loading the view.
 
         if #available(iOS 13.0, *) {
@@ -150,6 +148,7 @@ extension EntryNoteViewController{
     }
     
     func textFieldUI(){
+        titleTextField.becomeFirstResponder()
         titleTextField.translatesAutoresizingMaskIntoConstraints = false
         titleTextField.borderStyle = .roundedRect
         titleTextField.placeholder = "Enter note"
@@ -193,7 +192,6 @@ extension EntryNoteViewController{
     
     func scrollViewUI(){
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        
         scrollView.snp.makeConstraints{[weak self] make in
             guard let self = self else {return}
             make.edges.equalTo(view.safeAreaLayoutGuide)
@@ -204,7 +202,6 @@ extension EntryNoteViewController{
     }
     
     func UIAdder(){
-        
         stackView.addArrangedSubview(titleTextField)
         stackView.addArrangedSubview(detailTextField)
         stackView.addArrangedSubview(saveButton)
@@ -213,3 +210,5 @@ extension EntryNoteViewController{
         view.addSubview(scrollView)
     }
 }
+
+

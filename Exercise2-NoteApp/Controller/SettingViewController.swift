@@ -11,7 +11,7 @@ import SnapKit
 class SettingViewController: UIViewController {
     
     private let tableView = UITableView()
-    var name: String = AccountManager.getAccountInfo()
+    var name: String = AccountService.getAccountInfo() ?? ""
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -94,12 +94,12 @@ extension SettingViewController: UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.row == 1{
-            print("mveo")
+            AccountService.removeAccountInfo()
           let loginVC = LoginViewController()
             loginVC.modalPresentationStyle = .fullScreen
             if let window = UIApplication.shared.windows.first{
                 window.rootViewController = loginVC
-                UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromBottom, animations: nil)
+                UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
             }
         }
         

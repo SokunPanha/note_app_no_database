@@ -7,8 +7,8 @@
 
 import Foundation
 
-class NoteManager {
-    static let shared = NoteManager()
+class NoteService {
+    static let shared = NoteService()
     var selectedFolder: String?
     private var folders: [(folderName: String, notes: [Note])] = []
     var folderKeys: [String] {
@@ -23,7 +23,7 @@ class NoteManager {
 }
 
 // MARK: folder management
-extension NoteManager {
+extension NoteService {
     private func response(message: String, status: Bool) -> (String, Bool){
         return (message, status)
     }
@@ -81,7 +81,7 @@ extension NoteManager {
 }
 
 // MARK: Note management
-extension NoteManager{
+extension NoteService{
     func createNote(newNote: Note){
         guard let selectedFolder = selectedFolder else {return}
         guard let index = findFolderIndex(folderName: selectedFolder) else {return }
@@ -95,7 +95,9 @@ extension NoteManager{
     }
     
     func deleteNote(noteIndex: Int){
-        folders[noteIndex].notes.remove(at: noteIndex)
+        if let folderName = selectedFolder,let index = findFolderIndex(folderName: folderName){
+            folders[index].notes.remove(at: noteIndex)
+        }
     }
     
     func getNotes(folderName: String)-> [Note]{

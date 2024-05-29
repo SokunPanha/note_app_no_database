@@ -4,7 +4,7 @@ class FolderViewController: UICollectionViewController,UICollectionViewDelegateF
     
     
     var folderName: [String] = []
-    let noteManager = NoteManager.shared
+    let noteManager = NoteService.shared
     
     // MARK: - Initialization
     init() {
@@ -121,7 +121,7 @@ extension FolderViewController {
         let ok = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
             self?.noteManager.deleteFolder(folderName: deletedFolder)
             self?.reloadFolderData()
-            self?.collectionView.reloadData()
+            self?.collectionView.deleteItems(at: [indexPath])
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .destructive)

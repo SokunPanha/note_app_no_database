@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		953E076539B91DDFE4D4DB64 /* Pods_Exercise2_NoteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39AF0A4BEC3856563CDF3BA /* Pods_Exercise2_NoteApp.framework */; };
-		B817628C2C059BD300F49887 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B817628B2C059BD300F49887 /* UserManager.swift */; };
+		B817628C2C059BD300F49887 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B817628B2C059BD300F49887 /* AccountService.swift */; };
 		B817B2E02BFDE71E00DEC6C4 /* FolderNoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B817B2DF2BFDE71E00DEC6C4 /* FolderNoteListViewController.swift */; };
 		B817B2E42BFDFE5A00DEC6C4 /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B817B2E32BFDFE5A00DEC6C4 /* FolderCollectionViewCell.swift */; };
 		B817B2E72BFE116C00DEC6C4 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B817B2E62BFE116C00DEC6C4 /* Notes.swift */; };
+		B824A99C2C06DEB50053880F /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824A99B2C06DEB50053880F /* NoteDetailViewController.swift */; };
+		B834EBDE2C06F5BE003F90A2 /* AppearanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834EBDD2C06F5BE003F90A2 /* AppearanceService.swift */; };
 		B83C38232BFF894C00D80518 /* EntryNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C38222BFF894C00D80518 /* EntryNoteViewController.swift */; };
 		B8604C422BFD6C7E00D3FBA8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8604C412BFD6C7E00D3FBA8 /* TabBarViewController.swift */; };
 		B8604C442BFD6C9300D3FBA8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8604C432BFD6C9300D3FBA8 /* SettingViewController.swift */; };
@@ -23,15 +25,17 @@
 		B8748F772BFCC49C00FCD2B5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B8748F762BFCC49C00FCD2B5 /* Base */; };
 		B8748F792BFCC49D00FCD2B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8748F782BFCC49D00FCD2B5 /* Assets.xcassets */; };
 		B8748F7C2BFCC49D00FCD2B5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B8748F7B2BFCC49D00FCD2B5 /* Base */; };
-		B8D1EDF92C0382A400A8BBB2 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D1EDF82C0382A400A8BBB2 /* NoteManager.swift */; };
+		B8D1EDF92C0382A400A8BBB2 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D1EDF82C0382A400A8BBB2 /* NoteService.swift */; };
 		B8EB8CBC2BFCDC4200D3BF81 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB8CBB2BFCDC4200D3BF81 /* FolderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B817628B2C059BD300F49887 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		B817628B2C059BD300F49887 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		B817B2DF2BFDE71E00DEC6C4 /* FolderNoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderNoteListViewController.swift; sourceTree = "<group>"; };
 		B817B2E32BFDFE5A00DEC6C4 /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		B817B2E62BFE116C00DEC6C4 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		B824A99B2C06DEB50053880F /* NoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
+		B834EBDD2C06F5BE003F90A2 /* AppearanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceService.swift; sourceTree = "<group>"; };
 		B83C38222BFF894C00D80518 /* EntryNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryNoteViewController.swift; sourceTree = "<group>"; };
 		B8604C412BFD6C7E00D3FBA8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B8604C432BFD6C9300D3FBA8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +49,7 @@
 		B8748F782BFCC49D00FCD2B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8748F7B2BFCC49D00FCD2B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8748F7D2BFCC49D00FCD2B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8D1EDF82C0382A400A8BBB2 /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		B8D1EDF82C0382A400A8BBB2 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
 		B8EB8CBB2BFCDC4200D3BF81 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
 		D39AF0A4BEC3856563CDF3BA /* Pods_Exercise2_NoteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Exercise2_NoteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9E9508059A3D6B18F2B751 /* Pods-Exercise2-NoteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exercise2-NoteApp.release.xcconfig"; path = "Target Support Files/Pods-Exercise2-NoteApp/Pods-Exercise2-NoteApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				B8604C432BFD6C9300D3FBA8 /* SettingViewController.swift */,
 				B817B2DF2BFDE71E00DEC6C4 /* FolderNoteListViewController.swift */,
 				B83C38222BFF894C00D80518 /* EntryNoteViewController.swift */,
+				B824A99B2C06DEB50053880F /* NoteDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,8 +170,9 @@
 		B8D1EDF72C037E8000A8BBB2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B8D1EDF82C0382A400A8BBB2 /* NoteManager.swift */,
-				B817628B2C059BD300F49887 /* UserManager.swift */,
+				B8D1EDF82C0382A400A8BBB2 /* NoteService.swift */,
+				B817628B2C059BD300F49887 /* AccountService.swift */,
+				B834EBDD2C06F5BE003F90A2 /* AppearanceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -297,14 +303,16 @@
 			files = (
 				B8604C442BFD6C9300D3FBA8 /* SettingViewController.swift in Sources */,
 				B817B2E72BFE116C00DEC6C4 /* Notes.swift in Sources */,
-				B817628C2C059BD300F49887 /* UserManager.swift in Sources */,
+				B824A99C2C06DEB50053880F /* NoteDetailViewController.swift in Sources */,
+				B817628C2C059BD300F49887 /* AccountService.swift in Sources */,
 				B817B2E42BFDFE5A00DEC6C4 /* FolderCollectionViewCell.swift in Sources */,
 				B83C38232BFF894C00D80518 /* EntryNoteViewController.swift in Sources */,
 				B8604C422BFD6C7E00D3FBA8 /* TabBarViewController.swift in Sources */,
 				B8748F742BFCC49C00FCD2B5 /* LoginViewController.swift in Sources */,
 				B8748F702BFCC49C00FCD2B5 /* AppDelegate.swift in Sources */,
 				B8604C472BFD717C00D3FBA8 /* UserTableViewCell.swift in Sources */,
-				B8D1EDF92C0382A400A8BBB2 /* NoteManager.swift in Sources */,
+				B8D1EDF92C0382A400A8BBB2 /* NoteService.swift in Sources */,
+				B834EBDE2C06F5BE003F90A2 /* AppearanceService.swift in Sources */,
 				B817B2E02BFDE71E00DEC6C4 /* FolderNoteListViewController.swift in Sources */,
 				B8604C492BFD718D00D3FBA8 /* ListSettingTableViewCell.swift in Sources */,
 				B8EB8CBC2BFCDC4200D3BF81 /* FolderViewController.swift in Sources */,

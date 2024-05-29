@@ -15,7 +15,7 @@ class FolderNoteListViewController: UIViewController {
     private let detailTextField = UITextView()
     private let noteTextField = UITextField()
     private let viewContainer = UIView()
-    private let noteManager = NoteManager.shared
+    private let noteManager = NoteService.shared
     private let tableView = UITableView()
     override func viewWillAppear(_ animated: Bool) {
         reloadNote()
@@ -101,7 +101,7 @@ extension FolderNoteListViewController: UITableViewDelegate{
             
             self?.noteManager.deleteNote(noteIndex: indexPath.row)
             self?.reloadNote()
-            self?.tableView.reloadData()
+            self?.tableView.deleteRows(at: [indexPath], with: .bottom)
             // Handle delete action
             completion(true)
         }
@@ -124,6 +124,11 @@ extension FolderNoteListViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let detailVC = NoteDetailViewController()
+        detailVC.navigationItem.title = notesInFolder[indexPath.row].title
+        detailVC.detailText = notesInFolder[indexPath.row].detail
+        navigationController?.pushViewController(detailVC, animated: true)
+        
     }
     
 }
@@ -135,7 +140,11 @@ extension FolderNoteListViewController: EntryNoteDelegate{
         print("newNote",newNote)
         noteManager.createNote(newNote: newNote)
         reloadNote()
-        tableView.reloadData()
+        let indexPath = IndexPath(row: notesInFolder.count - 1, section: 0)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {[weak self] in
+            self?.tableView.insertRows(at: [indexPath], with: .right)
+        }
     }
     func didEditNote(newNote: Note, noteIndex: Int) {
         noteManager.updateNote(newNote: newNote, noteIndex: noteIndex)

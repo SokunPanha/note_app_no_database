@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
   
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 50, green: 50, blue: 50, alpha: 0.9)
         // Do any additional setup after loading the view.
         addingView()
         scrollViewUI()
@@ -45,8 +45,8 @@ class LoginViewController: UIViewController {
         textFieldUI()
         buttonLoginUI()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         let data = "2024"
@@ -186,14 +186,15 @@ extension LoginViewController {
             emptyAlert.message = alertMessage["empty"]
             present(emptyAlert, animated: true)
         }
-        else if AccountManager.validateCredentail(username: username, password: password){
+        else if AccountService.validateCredentail(username: username, password: password){
             let homeVC = TabBarViewController()
             homeVC.modalPresentationStyle = .fullScreen
             homeVC.modalTransitionStyle = .coverVertical
             homeVC.navigationItem.hidesBackButton = true
+            
             if let window = UIApplication.shared.windows.first {
                 window.rootViewController = homeVC
-                UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+                UIView.transition(with: window, duration: 0.2, options: .transitionCrossDissolve, animations: nil)
             }
         }
         else {
